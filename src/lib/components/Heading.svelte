@@ -2,7 +2,7 @@
     let { 
         text = "Heading text",
         headingLevel = "2",
-        } = $props();
+    } = $props();
  
     let headingTag = $derived('h' + headingLevel);
     let headingClass = $derived('heading-' + headingLevel);
@@ -13,6 +13,12 @@
 </svelte:element>
 
 <style>
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Courier New', Courier, monospace;
+        padding: 0.5rem 0 0.5rem 0;
+    }
+
     .heading-1 {
         font-weight: 900;
         font-size: 2.5rem;
