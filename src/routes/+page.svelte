@@ -12,6 +12,11 @@
     <Heading text="Find your stop"></Heading>
     <p>New student? Not sure which bus stops near you?</p>
     <p>Enter your postcode below to find out if a location close to you is on a Tiptop College bus route.</p>
+
+    <form>
+        <input type="text" placeholder="e.g. DE6 2EB" />
+        <input type="submit" value="Find your stop" />
+    </form>
 </Section>
 
 <Section theme="dark">
