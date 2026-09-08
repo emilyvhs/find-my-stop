@@ -32,7 +32,7 @@
 <Section theme="dark">
     <Heading text="All stops"></Heading>
     <p>This is a list of locations currently served by a Tiptop College bus. Click on a stop to navigate to the full timetable.</p>
-    <ul>
+    <ul class="stop-list p-4">
         {#each alphabetisedStops as stop}
         <li><a href="#{stop.slug}">{stop.name}</a></li>
         {/each}
@@ -51,6 +51,23 @@
             font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
       
+    }
+
+    .stop-list {
+        display: grid;
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-columns: auto;
+        grid-auto-flow: column;
+
+        @media screen and (max-width: 767px) {
+            grid-template-rows: repeat(10, 1fr);
+        }
+
+        @media screen and (max-width: 479px) {
+            grid-template-rows: auto;
+            grid-template-columns: 1fr;
+            grid-auto-flow: row;
+        }
     }
     
 </style>
