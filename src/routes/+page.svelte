@@ -13,9 +13,9 @@
     <p>New student? Not sure which bus stops near you?</p>
     <p>Enter your postcode below to find out if a location close to you is on a Tiptop College bus route.</p>
 
-    <form>
-        <input type="text" placeholder="e.g. DE6 2EB" />
-        <input type="submit" value="Find your stop" />
+    <form class="mt-8">
+        <input type="text" placeholder="e.g. DE6 2EB" class="rounded-sm" />
+        <input type="submit" value="Find your stop" class="p-2 cursor-pointer border border-fuchsia-600 rounded-sm bg-fuchsia-600 hover:bg-fuchsia-800 hover:border-fuchsia-800 text-teal-50" />
     </form>
 </Section>
 
