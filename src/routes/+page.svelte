@@ -3,13 +3,16 @@
     import Section from "$lib/components/Section.svelte";
     import { stops } from '$lib/data/route-data.json';
 
-    let alphabetisedStops = [];
-    stops.forEach(stop => {
-        alphabetisedStops.push({name: stop.name, slug: stop.slug});
-    });
-    alphabetisedStops.sort((a, b) => a.name.localeCompare(b.name));
+    let allStops = [];
+    let allRoutes = [];  
 
-    console.log(alphabetisedStops)
+    stops.forEach(stop => {
+        allStops.push({name: stop.name, slug: stop.slug});
+        allRoutes.push({name: stop.route_name, slug: stop.route_slug});        
+    });
+
+    let alphabetisedStops = allStops.sort((a, b) => a.name.localeCompare(b.name));
+    let routes = [...new Set(allRoutes.map(JSON.stringify))].map(JSON.parse);
     
 </script>
 
@@ -41,6 +44,9 @@
 
 <Section>
     <Heading text="Timetables"></Heading>
+    {#each routes as route}
+        <div id={route.slug}><Heading text={route.name} headingLevel="3"></Heading></div>
+    {/each}
 </Section>
 
 <style>

@@ -28,4 +28,9 @@
         font-weight: 600;
         font-size: 1.8rem;
     }
+
+    .heading-3 {
+        font-weight: 600;
+        font-size: 1.5rem;
+    }
 </style>
