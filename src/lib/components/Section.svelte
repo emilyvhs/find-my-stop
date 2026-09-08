@@ -24,9 +24,7 @@
         :global {
 
             a {
-                color: var(--color-fuchsia-600);
-                text-decoration: underline;
-                cursor: pointer;
+                color: var(--color-fuchsia-600);                
             }
 
             a:hover {
@@ -36,7 +34,19 @@
     }
 
     .medium-section {
+
         background-color: var(--color-teal-200);
+
+        :global {
+
+            a {
+                color: var(--color-fuchsia-200);                
+            }
+
+            a:hover {
+                color: var(--color-fuchsia-300);
+            }
+        } 
     }
 
     .dark-section {
@@ -47,9 +57,7 @@
         :global {
 
             a {
-                color: var(--color-fuchsia-200);
-                text-decoration: underline;
-                cursor: pointer;
+                color: var(--color-fuchsia-200);              
             }
 
             a:hover {
