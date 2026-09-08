@@ -1,6 +1,16 @@
 <script>
     import Heading from "$lib/components/Heading.svelte";
     import Section from "$lib/components/Section.svelte";
+    import { stops } from '$lib/data/route-data.json';
+
+    let alphabetisedStops = [];
+    stops.forEach(stop => {
+        alphabetisedStops.push({name: stop.name, slug: stop.slug});
+    });
+    alphabetisedStops.sort((a, b) => a.name.localeCompare(b.name));
+
+    console.log(alphabetisedStops)
+    
 </script>
 
 <Section>
@@ -22,6 +32,11 @@
 <Section theme="dark">
     <Heading text="All stops"></Heading>
     <p>This is a list of locations currently served by a Tiptop College bus. Click on a stop to navigate to the full timetable.</p>
+    <ul>
+        {#each alphabetisedStops as stop}
+        <li><a href="#{stop.slug}">{stop.name}</a></li>
+        {/each}
+    </ul>
 </Section>
 
 <Section>
@@ -37,4 +52,5 @@
         }
       
     }
+    
 </style>
